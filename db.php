@@ -5,7 +5,7 @@ $dbuser ="root";
 $dbpass = "";
  try {
     $pdo = new PDO($dsn, $dbuser, $dbpass);
-    $sql ="SELECT * FROM contas WHERE senha ='12121212' ";
+    $sql ="SELECT * FROM contas";
     $sql = $pdo -> query($sql);
 
     if($sql -> rowCount() > 0 ) {

@@ -29,9 +29,11 @@
             echo "Taxa de imposto: ".$n2."%";
             echo "</br>";
             echo "<hr>";
-        }   echo "Imposto :".$result;
+            echo "Imposto :".$result;
             echo "</br>";
             echo "Valor do produto :".$valorP;
+        }
+
         
     ?> 
     </div>   

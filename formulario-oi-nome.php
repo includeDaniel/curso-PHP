@@ -6,6 +6,6 @@
 
 <?php
 if(!empty($_POST['nome'])) {
-	echo "Opa, ".$_POST['nome'];
+	echo "Ola, ".$_POST['nome'];
 }
 ?>

@@ -5,7 +5,6 @@ $dbuser ="root";
 $dbpass = "";
  try {
     $pdo = new PDO($dsn, $dbuser, $dbpass);
-    $sql ="UPDATE contas SET titular = 'Daniel Nunes da Silva' WHERE id = ' 2333' ";
     $sql = $pdo -> query($sql);
      
     echo "executado com sucessso";
