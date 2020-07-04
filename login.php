@@ -21,11 +21,17 @@
                     try{
                         $db = new PDO($dsn, $dbuser, $dbpass);
                         $sql = $db ->query("SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'");
+
                         if($sql -> rowCount() > 0){
-                            $dado = $sql -> fetch();         
-                            $_SESSION['id'] = $dado['id'];
-                        } else {
+                            $user = $sql -> fetch();
+                            $_SESSION['id'] = $user['id'];
+                            $_SESSION['email'] = $user['email'];
                             header("location: index.php");
+                        }else{
+                            echo 
+                                '<div class="alert alert-danger" role="alert">
+                                   Usuário não cadastrado   
+                                </div>';
                         }
                     } catch(PDOException $e) {
                         echo "falhou ".$e->getMessage();
