@@ -36,13 +36,21 @@
                         $sql = $pdo->prepare($sql);
                         $sql->bindValue(':email', $email, PDO::PARAM_STR);
                         $sql->bindValue(':senha', $senha, PDO::PARAM_STR);
-                        $sql->execute();
+                        if($sql->execute()){
+                            header("location: login.php");
+                        }else{
+                            
+                            echo 
+                                '<div class="alert alert-danger" role="alert">
+                                    Não foi possível cadastrar o novo usuário no sistema, tente novamente    
+                                </div>';
+                            
+                        }
 
                     } catch(PDOexception $e) {
                         echo "falhou".$e->getMessage();
                     }
 
-                    //header("location: login.php");
                 }
             ?>
             <form method="POST" class="form-group form-inline">
