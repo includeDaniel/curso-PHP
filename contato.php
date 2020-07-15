@@ -8,9 +8,13 @@
     $nome = $contato->getNome('Danielkhdsg@gmail.com',);
     echo "Nome: ".$nome;
 
+    echo "<hr>";
+
     $lista = $contato->getALL();
     echo "<br>";
     print_r($lista);
+
+    echo "<hr>";
 
     $contato->editar('Fulano', 'Danielzcomputacao@gmail.com');
     echo "<br>";

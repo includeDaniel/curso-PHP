@@ -8,7 +8,6 @@
             $this->pdo = new PDO("mysql:dbname=crudoo;host=localhost", "root", "" );
 
         }
-
         public function adicionar($email, $nome = '') {
             // 1 passo = verificar se o email ja existe no sistema 
             // 2 passo = adicionar
@@ -24,7 +23,6 @@
             } else {
                 return false;
             }
-
         }
         public function getNome($email) {
             $sql ="SELECT nome FROM contatos WHERE email = :email";
@@ -88,12 +86,9 @@
                 return true;
             } else {
                 return false;
-            }
-               
+            }  
         }
     }
-
-
 ?>
 
 
