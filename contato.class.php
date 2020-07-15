@@ -63,18 +63,11 @@
                 return false;
             }
         }
-        public function excluir($email) {
-            if($this->existeEmail($email)) {
-                $sql ="DELETE FROM contatos WHERE email = :email";
-                $sql = $this->pdo->prepare($sql);
-                $sql->bindValue(':email', $email);
-                $sql->execute();
-
-                echo "foi exclúido";
-            } else {
-                echo "Não foi exclúido";
-                return false;
-            }
+        public function excluir($id) {
+            $sql ="DELETE FROM contatos WHERE id = :id";
+            $sql = $this->pdo->prepare($sql);
+            $sql->bindValue(':id', $id);
+            $sql->execute();
         }
         private function existeEmail($email) {
             $sql ="SELECT * FROM contatos WHERE email = :email";
